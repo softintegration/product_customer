@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-25 15:03+0000\n"
-"PO-Revision-Date: 2022-11-25 15:03+0000\n"
+"POT-Creation-Date: 2022-12-08 11:45+0000\n"
+"PO-Revision-Date: 2022-12-08 11:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,25 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_customer
+#: model:ir.model.fields,field_description:product_customer.field_product_pricelist__partner_id
 #: model:ir.model.fields,field_description:product_customer.field_product_product__partner_id
 #: model:ir.model.fields,field_description:product_customer.field_product_template__partner_id
 msgid "Customer"
 msgstr "Client"
 
 #. module: product_customer
+#: model:ir.model,name:product_customer.model_product_pricelist
+msgid "Pricelist"
+msgstr "Liste de prix"
+
+#. module: product_customer
 #: model:ir.model,name:product_customer.model_product_template
 msgid "Product Template"
 msgstr "Modèle d'article"
+
+#. module: product_customer
+#: code:addons/product_customer/models/product_pricelist.py:18
+#: code:addons/product_customer/models/product_pricelist.py:20
+#, python-format
+msgid "Some selected products partners are different from selected partner %s!"
+msgstr "Tous les articles sélectionnés doivent appartenir au client %s!"

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?><odoo>
+  <data>
+
+    <record id="product.product_pricelist_view_inherit" model="ir.ui.view">
+            <field name="name">product.pricelist.form.inherit</field>
+            <field name="model">product.pricelist</field>
+            <field name="inherit_id" ref="product.product_pricelist_view"/>
+            <field name="groups_id" eval="[(4, ref('product.group_sale_pricelist'))]"/>
+            <field name="arch" type="xml">
+                <!-- When in advanced pricelist mode : pricelist rules
+                  Should open in a form view and not be editable inline anymore.
+                -->
+                <xpath expr="//field[@name='item_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='pricelist_rules']" position="inside">
+                    <field name="item_ids" nolabel="1" context="{'default_base':'list_price'}" groups="product.group_product_pricelist">
+                      <tree string="Pricelist Rules">
+                          <field name="name" string="Applicable On"/>
+                          <field name="min_quantity"/>
+                          <field name="price" string="Price"/>
+                          <field name="date_start"/>
+                          <field name="date_end"/>
+                          <field name="base" invisible="1"/>
+                          <field name="price_discount" invisible="1"/>
+                          <field name="applied_on" invisible="1"/>
+                          <field name="compute_price" invisible="1"/>
+                      </tree>
+                  </field>
+                </xpath>
+            </field>
+        </record>
+
+
+
+      <record id="product_pricelist_view_inherited" model="ir.ui.view">
+      <field name="name">product.pricelist.view.inherited</field>
+      <field name="model">product.pricelist</field>
+      <field name="inherit_id" ref="product.product_pricelist_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//sheet/group" position="after">
+            <group>
+              <field name="partner_id" options="{'no_create':True,'no_edit':True,'no_open':True}"/>
+            </group>
+        </xpath>
+        <xpath expr="//field[@name='item_ids']/tree/field[@name='product_tmpl_id']" position="attributes">
+            <attribute name="domain">[('partner_id','=',parent.partner_id)]</attribute>
+        </xpath>
+        <xpath expr="//field[@name='item_ids']/tree/field[@name='product_id']" position="attributes">
+            <attribute name="domain">[('product_tmpl_id', '=', product_tmpl_id),('partner_id','=',parent.partner_id)]</attribute>
+        </xpath>
+      </field>
+    </record>
+
+        <record id="product_pricelist_item_form_view_inherited" model="ir.ui.view">
+          <field name="name">product.pricelist.item.form.view.inherited</field>
+          <field name="model">product.pricelist.item</field>
+          <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+          <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
+                <attribute name="domain">[('partner_id','=',parent.partner_id)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="attributes">
+                <attribute name="domain">[('partner_id','=',parent.partner_id)]</attribute>
+            </xpath>
+          </field>
+        </record>
+
+
+
+
+
+
+  </data>
+</odoo>
