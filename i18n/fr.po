@@ -19,6 +19,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_customer.field_product_pricelist__partner_id
 #: model:ir.model.fields,field_description:product_customer.field_product_product__partner_id
 #: model:ir.model.fields,field_description:product_customer.field_product_template__partner_id
+#: model_terms:ir.ui.view,arch_db:product_customer.product_pricelist_view_search_inherited
 msgid "Customer"
 msgstr "Client"
 
@@ -38,3 +39,8 @@ msgstr "Modèle d'article"
 #, python-format
 msgid "Some selected products partners are different from selected partner %s!"
 msgstr "Tous les articles sélectionnés doivent appartenir au client %s!"
+
+#. module: product_customer
+#: model_terms:ir.ui.view,arch_db:product_customer.product_pricelist_view_search_inherited
+msgid "Group By"
+msgstr "Regrouper par"
