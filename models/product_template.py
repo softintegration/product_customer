@@ -7,4 +7,4 @@ from odoo.exceptions import UserError
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    partner_id = fields.Many2one('res.partner',string='Customer',domain=[('customer_rank','>',0)])
+    partner_id = fields.Many2one('res.partner',string='Customer',domain=[('parent_id','=',False),('customer_rank','>',0)])
