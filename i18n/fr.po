@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-08 11:45+0000\n"
-"PO-Revision-Date: 2022-12-08 11:45+0000\n"
+"POT-Creation-Date: 2023-02-14 09:07+0000\n"
+"PO-Revision-Date: 2023-02-14 09:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_customer.field_product_product__partner_id
 #: model:ir.model.fields,field_description:product_customer.field_product_template__partner_id
 #: model_terms:ir.ui.view,arch_db:product_customer.product_pricelist_view_search_inherited
+#: model_terms:ir.ui.view,arch_db:product_customer.product_template_search_view_inherited
 msgid "Customer"
 msgstr "Client"
+
+#. module: product_customer
+#: model_terms:ir.ui.view,arch_db:product_customer.product_pricelist_view_search_inherited
+msgid "Group By"
+msgstr "Regrouper par"
 
 #. module: product_customer
 #: model:ir.model,name:product_customer.model_product_pricelist
@@ -34,13 +40,9 @@ msgid "Product Template"
 msgstr "Modèle d'article"
 
 #. module: product_customer
-#: code:addons/product_customer/models/product_pricelist.py:18
-#: code:addons/product_customer/models/product_pricelist.py:20
+#: code:addons/product_customer/models/product_pricelist.py:0
+#: code:addons/product_customer/models/product_pricelist.py:0
 #, python-format
-msgid "Some selected products partners are different from selected partner %s!"
+msgid ""
+"Some selected products partners are different from selected partner %s!"
 msgstr "Tous les articles sélectionnés doivent appartenir au client %s!"
-
-#. module: product_customer
-#: model_terms:ir.ui.view,arch_db:product_customer.product_pricelist_view_search_inherited
-msgid "Group By"
-msgstr "Regrouper par"

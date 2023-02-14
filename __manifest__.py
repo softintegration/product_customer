@@ -10,7 +10,7 @@
     'qweb': [],
     'description': False,
     'images': [],
-    'version': '1.0.2.4',
+    'version': '1.0.2.5',
     'category': 'Product',
     'demo': [],
     'depends': ['sale'],
